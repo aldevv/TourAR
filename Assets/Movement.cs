@@ -13,18 +13,21 @@ public class Movement : MonoBehaviour {
     private Vector3 PosicionInicialVideo;
     private Vector3 PosicionActualVideo;
     private GameObject objetoTexto;
-    private GameObject ObjetoLat;
-    private GameObject ObjetoLon;
+    private GameObject LatTexto;
+    private GameObject LonTexto;
+    private GameObject Iteraciones;
     private bool coordIniciales = true;
     float distancia;
+    private bool loop = true;
 
     // Use this for initialization
 
     void Start()
     {
         objetoTexto = GameObject.FindGameObjectWithTag ("Texto");
-        ObjetoLat = GameObject.FindGameObjectWithTag("Lat");
-        ObjetoLon = GameObject.FindGameObjectWithTag("Lon");
+        LatTexto = GameObject.FindGameObjectWithTag("Lat");
+        LonTexto = GameObject.FindGameObjectWithTag("Lon");
+        Iteraciones = GameObject.FindGameObjectWithTag("Iter");
         this.PosicionInicialVideo = transform.position;
         this.PosicionActualVideo = transform.position;
 
@@ -44,11 +47,17 @@ public class Movement : MonoBehaviour {
 
     IEnumerator getLocation()
     {
-        int maxWait = 10;
+        
         bool enableByRequest = true;
-         while (true)
+        int itera = 1;
+
+        //esto comienza el loop 
+         while (loop)
           {
-                LocationService service = Input.location;
+            int maxWait = 10;
+            Iteraciones.GetComponent<Text>().text = "Iteracion #" + itera;
+            itera++;
+            LocationService service = Input.location;
 
                 if (!enableByRequest && !service.isEnabledByUser)
                 {
@@ -76,13 +85,11 @@ public class Movement : MonoBehaviour {
                     yield break;
                 }
                 else
-                {
-                   
-                    
+                {   //se consigue las coordenadas iniciales solo una vez
                     if (coordIniciales)
                     {
-                        ObjetoLat.GetComponent<Text>().text = "latitud original" + service.lastData.longitude;
-                        ObjetoLon.GetComponent<Text>().text = "longitud original" + service.lastData.longitude;
+                        LatTexto.GetComponent<Text>().text = "Latitud original" + service.lastData.latitude;
+                        LonTexto.GetComponent<Text>().text = "Longitud original" + service.lastData.longitude;
                         lat1 = service.lastData.latitude;
                         lon1 = service.lastData.longitude;
                         coordIniciales = false;
@@ -90,15 +97,16 @@ public class Movement : MonoBehaviour {
                     
                 lat2 = service.lastData.latitude;
                 lon2 = service.lastData.longitude;
-            }
+                }
             // se consigue la distancia entre las coordenadas
             distancia = CalcularDistancia(lat1, lon1, lat2, lon2);
 
+            
             objetoTexto.GetComponent<Text>().text = "Distancia: " + distancia;
 
-            PosicionActualVideo = PosicionInicialVideo + new Vector3(0, 0, distancia*5);
+            PosicionActualVideo = PosicionInicialVideo - new Vector3(0, 0, distancia*13);
             // Stop service if there is no need to query location updates continuously
-            Input.location.Stop();
+            service.Stop();
         } 
     }
 
