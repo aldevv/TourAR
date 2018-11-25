@@ -61,11 +61,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Movement.cs" />
-    <Compile Include="Assets\Scripts\changetext.cs" />
-    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Scripts\TEST.cs" />
+    <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorLinear.cs" />
+    <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorMove.cs" />
+    <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorSelf.cs" />
+    <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorSpherical.cs" />
+    <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\rotation.cs" />
+    <Compile Include="Assets\Scripts\Button.cs" />
+    <Compile Include="Assets\Scripts\CalcDistancia.cs" />
+    <Compile Include="Assets\Scripts\Debugging.cs" />
+    <Compile Include="Assets\Scripts\Debugging2.cs" />
+    <Compile Include="Assets\Scripts\GPSSite.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\MovementVideo.cs" />
+    <Compile Include="Assets\Scripts\TouchControls.cs" />
+    <Compile Include="Assets\Scripts\UItester.cs" />
+    <Compile Include="Assets\Scripts\VideoControls2.cs" />
     <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
+    <None Include="Assets\Particle Attractor by Moonflower Carnivore\Shaders\Particles Additive Intensify.shader" />
+    <None Include="Assets\Models\Ashtar flying Disk\Readme.txt" />
     <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />
     <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
     <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
@@ -76,6 +89,7 @@
     <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
     <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
     <None Include="Assets\Vuforia\Shaders\DepthContour.shader" />
+    <None Include="Assets\Particle Attractor by Moonflower Carnivore\Particle Attractor documentation.txt" />
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Axlkn/Documents/AR/Test camera/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

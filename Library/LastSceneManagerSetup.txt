@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/needs distance fixing.unity
+- path: Assets/VideoButton.unity
   isLoaded: 1
   isActive: 1
