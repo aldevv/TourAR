@@ -1,5 +1,4 @@
-/Library
-/QCAR
-/Temp
-/UIElementsSchema
-/ProjectSettings
+Library/
+QCAR/
+Temp/
+UIElementsSchema/
