@@ -12,6 +12,7 @@ public class GPSSite : MonoBehaviour
     public VideoPlayer video;
     public GameObject monitorTog;
     public CalcDistancia calculo2;
+    bool primeraVez = false;
     ///////////////////////////////
     private float latSitio1 = 5.034707f;
     private float lonSitio1 = -75.458288f;
@@ -38,26 +39,32 @@ public class GPSSite : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     public void Triangulacion()
     {
         bool toogle;
         float Proximidad, Distancia1; //, Distancia2, Distancia3;
-        lati.GetComponent<Text>().text = "Latitud del sitio es: "+ latSitio1;
-        longi.GetComponent<Text>().text ="Longitud del sitio es "+ lonSitio1;
+        lati.GetComponent<Text>().text = "Lat actual es "+ Data.lat2;
+        longi.GetComponent<Text>().text ="Lon actual es "+ Data.lon2;
         Distancia1 = calculo2.CalcularDistancia(Data.lat2, Data.lon2, latSitio1, lonSitio1);
         Proximidad = Distancia1;
+        Data.movimiento = Data.PosicionInicialVideo.z;
         //si la distancia del celular al sitio es menor o igual a la distancia minima permitida (en metros en este caso 10) entonces se activa el AR
         if (Proximidad <= DistanciaMinima)
         {
             toogle = true;
             monitorTog.GetComponent<VideoPlayer>().enabled = toogle;
             monitorTog.GetComponent<MeshRenderer>().enabled = toogle;
-            video.GetComponent<VideoPlayer>().Play();
+            
             textoProximidad.GetComponent<Text>().text = "Encontrado! :" + Proximidad + " metros";
-
+           
+            if (!primeraVez && video.isPlaying)
+            {
+                video.GetComponent<VideoPlayer>().Pause();
+                primeraVez = true;
+            }
         }
         else //este else deberia quitarse para el producto final ya que podria ser inconveniente que se quitara el video de la nada
         {

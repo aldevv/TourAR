@@ -6,9 +6,10 @@ using UnityEngine.Video;
 public class VideoControls2 : MonoBehaviour {
 
     public VideoPlayer video1;
+    public GameObject botonPlay; //icono de play cuando se pausa
     private void Awake()
     {
-        video1.GetComponent<VideoPlayer>();
+        
     }
     // Use this for initialization
     void Start () {
@@ -25,10 +26,17 @@ public class VideoControls2 : MonoBehaviour {
         if (video1.isPlaying)
         {
             video1.Pause();
+            botonPlay.SetActive(true);
         }
         else
         {
             video1.Play();
+            botonPlay.SetActive(false);
         }
+    }
+
+    public bool isItPlaying()
+    {
+        return video1.isPlaying;
     }
 }

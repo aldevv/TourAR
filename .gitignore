@@ -1,9 +1,4 @@
-QCAR/
-.vs/
-obj/*
-!obj/debug
-Packages/
-ProjectSettings/
-UIElementsSchema/
-Temp/
-
+Library/*
+QCAR/*
+Temp/*
+UIElementsSchema

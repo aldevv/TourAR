@@ -28,10 +28,6 @@ public class TouchControls : MonoBehaviour {
                     control.PlayPauseVideo();
                 }
             }
-            
-
-            
-
         }
 	}
 }

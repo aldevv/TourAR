@@ -10,9 +10,9 @@ public class MovementVideo : MonoBehaviour
     private float lon1;
     public float lat2;
     public float lon2;
-    private float movimiento;
+    public float movimiento;
     private Vector3 PosicionDebugVideo;
-    private Vector3 PosicionInicialVideo;
+    public Vector3 PosicionInicialVideo;
     private Vector3 PosicionActualVideo;
     public GameObject objetoTexto;
     public GameObject LatTexto;
@@ -45,7 +45,7 @@ public class MovementVideo : MonoBehaviour
             yield break;
         }
 
-        service.Start(5f, 0.01f);
+        service.Start(1f, 1f);
 
         while (service.status == LocationServiceStatus.Initializing && maxWait > 0)
         {
@@ -148,7 +148,7 @@ public class MovementVideo : MonoBehaviour
                 yield break;
             }
 
-            service.Start(5f, 0.1f);
+            service.Start(3f, 0.1f);
 
             while (service.status == LocationServiceStatus.Initializing && maxWait > 0)
             {
@@ -183,7 +183,7 @@ public class MovementVideo : MonoBehaviour
             }
             // se consigue la distancia entre las coordenadas
             distancia = calculo.CalcularDistancia(lat1, lon1, lat2, lon2);
-            movimiento = distancia * 12;
+            movimiento = distancia * 11;
 
             objetoTexto.GetComponent<Text>().text = "Distancia: " + distancia;
 
