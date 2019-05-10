@@ -95,6 +95,7 @@ public class MovementVideo : MonoBehaviour
         PosicionActualVideo = PosicionInicialVideo - new Vector3(0, 0, movimiento);
 
         //coroutine permite que la funcion se ejecute con algunas condiciones de ejecucion (wait 5 seconds etc)
+        // en lugar de ponerlo en el update se pone en start y tiene un while dentro para que se siga repitiendo
         StartCoroutine(getLocation());
     }
 
@@ -135,7 +136,7 @@ public class MovementVideo : MonoBehaviour
       /*  float UPDATE_TIME = 2f; //Every  1 seconds
         WaitForSeconds updateTime = new WaitForSeconds(UPDATE_TIME);
         */
-        while (loop)
+        while (loop)  
         {
             int maxWait = 10;
             Iteraciones.GetComponent<Text>().text = "Iteracion #: " + itera;
@@ -190,6 +191,8 @@ public class MovementVideo : MonoBehaviour
 
             PosicionActualVideo = PosicionInicialVideo - new Vector3(0, 0, movimiento);
             // Stop service if there is no need to query location updates continuously
+
+            // el metodo Triangulacion del objeto GEO es el que decide si mostrar o no el video 
             GEO.Triangulacion();
             service.Stop();
 

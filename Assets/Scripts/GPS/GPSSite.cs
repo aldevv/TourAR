@@ -42,12 +42,16 @@ public class GPSSite : MonoBehaviour
         
     }
 
+    // PERMITE MOSTRAR EL VIDEO SI SE CUMPLE EL REQUISITO
     public void Triangulacion()
     {
         bool toogle;
         float Proximidad, Distancia1; //, Distancia2, Distancia3;
+        // Data es un objeto tipo movement video
         lati.GetComponent<Text>().text = "Lat actual es "+ Data.lat2;
         longi.GetComponent<Text>().text ="Lon actual es "+ Data.lon2;
+
+        // el objeto calculo 2 es de tipo calcDistancia
         Distancia1 = calculo2.CalcularDistancia(Data.lat2, Data.lon2, latSitio1, lonSitio1);
         Proximidad = Distancia1;
         Data.movimiento = Data.PosicionInicialVideo.z;
