@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: AcWE/yH/////AAABmVuIFRdhGEx0hI65Y6oH3cpn2yfYnSS6H+eQHtxiVyCF+Xn9Fv4f5qdtlpN1Q8ALPCvM9X02bU3vFrnZsAq4Ayll7ExbOvnY6FRdIatprIDqHFI9JjK/eCbctyxM/JYGUrYT1MV9SzEPbSwSpaf0suf9gPD4N5g4XIA9OvOF71r1gHDYPC8cUbgfz0t4PTVgOMyiNOt+MDWh2mlNhmuU7MowfGhfjch7OTAQBmrosCyGRDlAqhfyf5C85D6TkBPu2OgCoaMdPIlGkZqGBot8ksscTOJvos72HscnhXVU1hyDxWzRhaRYnuPx5C2GRh2J4TqkyN6xKm4cRI27RIDe0RmYnA61vFRPr558mJnlygEu
-    ufoLicenseKey: QVhiM0Y1Ly8vLy8vQUFBQUtPbnFIeHJFSGs1N3VrMlg4U050eVBzK2pkOFZxMDhrazlwYjBsYS9aZUIxQlV1ckZWcWt0ZllSQWpnT2tIRlY2VzdOMDRTRjNYRUhmbTF5L1BnYlB4eWdHWEF6RUNheXowc3dyNVNYa2ozdERuRjhka1FpOHRscHdkMDcrcEJEY1FjTjNJcUM1bEgwOTYzQkdZdjRsQStRb0hSQU9nRGthelp5TlY0WHVwWU9EaE05NWw5bXAzbnBDMjM5MWZBWXBFdEdiL2loTDNab3N4b25ZblhjK1JtSS9wLzRoTDIwVGhmTXR6WFJNYkpUTXZLZzJoQ0N0TEJXNEptZ0pSOUtSdStzQWM3QjVNOWFFMGVHQ1dUT1VRSUUweEpiZC9ZL2cvS29iNDhBRXdQOGFwbWR5NmRWU0FHU2psVzRZY2FEU2Zud3J1ZHhucVNmSUZiajNTUnIzM0lKVlFIaW1rL0oyOGNFeDdyekcySXg=
+    vuforiaLicenseKey: 
+    ufoLicenseKey: QWJXTlFiRC8vLy8vQUFBQUtDT3Z3S3pibEVrRnN4UVVCVGJLKzlaaDQ4Z3Urc2RHanZYOTBNYStVajNhNmZmQkkyZ2RndHVjRE5aVTc3V0dBeFJUVGM5TFJPb3JVZzFYUkQ2QStZeTlub0JDWnFaWTFnUW1SU2pRUWlIVmxZWVhQdGJkbFkwd21FMS9QcENRUHRNRW1JemRWMHlqSkR1OVcwQVpDdFZtcTZYRHVuM1Izci9PamRrMnFSdUsxVnNvWmt3dUFsYW9LQjZ5YmtnelcwdnkrY0g2UW4zS283RzhYbUY5aVB0QzFaaDhWQjJuQS9wMUt6cWNDby95MVJrSHY3OTM3NWcrK2RQVlRuNDhNUkwvWWhSWWx6OVJUVjdualUwU2lkMVJIR3FDSmNFL01XWGl6dGVLYXY3TU41eHJsQW5lbXJZWnRwL0hrT29zd2M1c3JKa3JUOHAwR21iYkNSSU9KSkR3MnJaNG42RittdkdCSDcrdEY1Vlk=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
@@ -53,11 +53,11 @@ MonoBehaviour:
     matteShader: {fileID: 4800000, guid: 66d0d78a3000021448b598bb54a3bfdf, type: 3}
     videoBackgroundEnabled: 1
   deviceTracker:
-    autoInitTracker: 1
-    autoStartTracker: 1
-    trackingMode: 0
-    posePrediction: 1
-    modelCorrectionMode: 2
+    autoInitTracker: 0
+    autoStartTracker: 0
+    trackingMode: 1
+    posePrediction: 0
+    modelCorrectionMode: 0
     modelTransformEnabled: 0
     modelTransform: {x: 0, y: 0.1, z: -0.1}
   smartTerrain:

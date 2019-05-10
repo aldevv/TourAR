@@ -24,13 +24,14 @@ public class MovementVideo : MonoBehaviour
     private bool coordIniciales = true;
     float distancia;
     private bool loop = true;
-
-    // Use this for initialization
+    
+    // lo´primero que se ejecuta al iniciar la aplicacion
     void Awake()
     {   
         firstrun();
     }
 
+    //es para conseguir el gps de manera inmediata al iniciar la aplicacion
     IEnumerator firstrun()
     {
         bool enableByRequest = true;
@@ -88,7 +89,7 @@ public class MovementVideo : MonoBehaviour
 
     void Start()
     {
-
+        
         PosicionInicialVideo = transform.position;
         PosicionActualVideo = transform.position;
         PosicionActualVideo = PosicionInicialVideo - new Vector3(0, 0, movimiento);
@@ -97,9 +98,9 @@ public class MovementVideo : MonoBehaviour
         StartCoroutine(getLocation());
     }
 
-    // Update is called once per frame
+    
     void Update()
-    {
+    {    // mueve el video segun se va moviendo el celular!
         if (transform.position.z >= 110)
         {                                                                 // mientras mas pequeño el numero mas despacio se acerca
             transform.position = Vector3.Lerp(transform.position, PosicionActualVideo, 0.008f);
