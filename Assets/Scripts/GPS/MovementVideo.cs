@@ -179,7 +179,8 @@ public class MovementVideo : MonoBehaviour
                     lon1 = service.lastData.longitude;
                     coordIniciales = false;
                 }
-
+                LatTexto.GetComponent<Text>().text = "Latitud original: " + service.lastData.latitude;
+                LonTexto.GetComponent<Text>().text = "Longitud original: " + service.lastData.longitude;
                 lat2 = service.lastData.latitude;
                 lon2 = service.lastData.longitude;
             }
